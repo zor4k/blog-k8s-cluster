@@ -20,5 +20,8 @@ spec:
           image: mykubetest.azurecr.io/node-app-2:latest
           ports:
           - containerPort: 8080
+          envFrom:
+            - secretRef:
+                name: mysql-secret
 
 
