@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: blog-cert
+  namespace: default
+spec:
+  dnsNames:
+    - bytebot.xyz
+  secretName: blog-cert-secret
+  issuerRef:
+    name: letsencrypt-cluster-issuer
+    kind: ClusterIssuer
+

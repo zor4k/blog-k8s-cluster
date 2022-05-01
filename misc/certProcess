@@ -1,0 +1,20 @@
+
+An Issuer object is a yaml file that defines a 
+certificate authority 
+
+A Certificate object is a yaml file which represents 
+the acutal certificate that we need. 
+
+
+Once we deploy a new certificate object, cert manger will
+automate the process an generate a kubernetes secret the 
+will attach to our ingress controller, this secret will 
+represent our certificate, and enable our clients to
+connect to our server over tls. 
+
+
+you can use "kubectl describe certificate <cert-name>" to 
+see the status of your certificate.
+
+once your certificate has been created, you can view it
+under the secrets resource. : 

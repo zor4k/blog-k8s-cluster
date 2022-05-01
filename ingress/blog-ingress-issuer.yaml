@@ -1,0 +1,21 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-cluster-issuer
+  namespace: 
+spec:
+  acme:
+    #letsencrypt prod server
+    server: https://acme-v02.api.letsencrypt.org/directory
+
+    #letsencrypt staging server    
+    #server: https://acme-staging-v02.api.letsencrypt.org/directory
+    email: # email here
+    privateKeySecretRef:
+      name: letsencrypt-ca-key
+    solvers:
+      -http01:
+        ingress:
+          # cert manager creates a new Ingress in order to 
+          # route traffic to the acmeresolver pods, which hanlde challenges
+          class: nginx
