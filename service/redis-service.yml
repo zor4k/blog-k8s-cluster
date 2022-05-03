@@ -4,7 +4,7 @@ metadata:
   name: redis-service
 spec:
   selector: 
-    app: redis-service 
+    app: redis-pod
   ports:
     - port: 6379 
       targetPort: 6379
